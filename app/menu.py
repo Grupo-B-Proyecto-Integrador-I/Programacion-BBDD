@@ -6,6 +6,7 @@ class Menu:
         if current_user.user_role == 'admin':
             print(current_user.user_role)
             self.show_menu_admin(current_user, users, auth)
+        
 
     def show_menu_admin(self, user: Admin, users, auth):
         while True:
@@ -19,6 +20,8 @@ class Menu:
             
             if option == '1':
                 user.view_users(users)
+            elif option == '2':
+                user.modify_user(users)
             if option == '4':
                 auth.logout()
                 break
