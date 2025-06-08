@@ -14,11 +14,11 @@ class Auth:
 
     def login(self):
         print('--* Inicio de sesión *--')
-        name = input('Nombre de usuario:').upper()
+        name = input('Nombre de usuario: ').strip()
         password = input('Contraseña:')
 
         for user in self.users:
-            if user.user_name == name and user.user_password == password:
+            if user.user_name.lower() == name.lower() and user.user_password == password:
                 self.user_current = user
                 print('¡Se inició sesión correctamente!')
                 return True
@@ -29,7 +29,7 @@ class Auth:
 
     def register(self):
         print('--* Registrar un usuario *--')
-        name = input('Nombre de usuario:').upper()
+        name = input('Nombre de usuario: ').strip()
 
         while True:
             password = input('Contraseña:')

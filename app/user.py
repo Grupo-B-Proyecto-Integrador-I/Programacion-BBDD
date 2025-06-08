@@ -11,6 +11,13 @@ class User:
         User.__id += 1
 
 
+    def view_personal_data(self):
+        print("\n=== TUS DATOS ===")
+        print(f"ID: {self.user_id}")
+        print(f"Nombre: {self.user_name}")
+        print(f"Rol: {self.user_role}")
+
+
 class Admin(User):
     def __init__(self, user_name, user_password):
         super().__init__(user_name, user_password)
