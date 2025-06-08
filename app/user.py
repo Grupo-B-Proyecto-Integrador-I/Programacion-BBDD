@@ -13,7 +13,6 @@ class User:
 
     def view_personal_data(self):
         print("\n=== TUS DATOS ===")
-        print(f"ID: {self.user_id}")
         print(f"Nombre: {self.user_name}")
         print(f"Rol: {self.user_role}")
 
