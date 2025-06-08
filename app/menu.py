@@ -22,7 +22,9 @@ class Menu:
                 user.view_users(users)
             elif option == '2':
                 user.modify_user(users)
-            if option == '4':
+            elif option == '3':
+                user.delete_user(users)
+            elif option == '4':
                 auth.logout()
                 break
             else:

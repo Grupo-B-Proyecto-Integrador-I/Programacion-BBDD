@@ -21,7 +21,7 @@ class Admin(User):
         for user in users:
             print(f"• Usuario: {user.user_name} - Rol: {user.user_role}")
 
-def modify_user(self, users): 
+    def modify_user(self, users): 
         print('--* Modificar Usuario *--')
         user_to_modify_name = input('Ingrese el nombre del usuario a modificar:').upper()
 
@@ -68,3 +68,21 @@ def modify_user(self, users):
 
             else:
                 print("Opción no válida. Ingrese 1 o 2.")
+                
+    def delete_user(self, users):
+        print('--* Eliminar Usuario *--')
+        user_to_delete = input('Ingrese el nombre del usuario a eliminar:').upper()
+
+        for user in users:
+            if user.user_name.upper() == user_to_delete:
+                if user.user_name.upper() == self.user_name.upper():
+                    print("No puedes eliminar tu propio usuario.")
+                    return
+                users.remove(user)
+                print(f"Usuario '{user_to_delete}' eliminado correctamente.")
+                return
+
+        print(f"Usuario '{user_to_delete}' no encontrado.")
+                
+                
+                
