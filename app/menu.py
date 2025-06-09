@@ -1,4 +1,4 @@
-from user import Admin
+from user import Admin, User
 
 class Menu:
 
@@ -31,7 +31,7 @@ class Menu:
             else:
                 print("Opción no valida")
                 
-    def show_standard_menu(self, user, auth):
+    def show_menu_user(self, user: User, auth):
         while True:
             print(f"\n¡Bienvenido {user.user_name}!")
             print("=== MENÚ USUARIO ===")
