@@ -6,7 +6,9 @@ class Menu:
         if current_user.user_role == 'admin':
             print(current_user.user_role)
             self.show_menu_admin(current_user, users, auth)
-
+        else:     
+            self.show_standard_menu(current_user, auth)
+            
     def show_menu_admin(self, user: Admin, users, auth):
         while True:
             print(f'¡{user.user_name}! Seleciona una opción para avanzar:')
@@ -42,6 +44,7 @@ class Menu:
                 user.view_personal_data()
             elif option == "2":
                 auth.logout()
+                print("\nSesión cerrada correctamente.")
                 break
             else:
-                print("Opción no valida")
+                print("\nOpción inválida. Por favor ingrese 1 o 2.")
