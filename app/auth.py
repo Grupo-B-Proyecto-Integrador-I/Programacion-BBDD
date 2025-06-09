@@ -7,11 +7,6 @@ class Auth:
         self.users = []
         self.user_current = None
 
-        #Usuarios por defecto para pruebas
-        self.users.append(Admin('MELI', 'use123'))
-        self.users.append(User('nuevo', 'use123'))
-        self.users.append(User('nuevoDos', 'use123'))
-
     def login(self):
         print('--* Inicio de sesión *--')
         name = input('Nombre de usuario: ').strip()
