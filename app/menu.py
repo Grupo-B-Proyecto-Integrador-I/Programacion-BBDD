@@ -1,4 +1,4 @@
-from user import Admin
+from user import Admin, User
 
 class Menu:
 
@@ -19,7 +19,28 @@ class Menu:
             
             if option == '1':
                 user.view_users(users)
-            if option == '4':
+            elif option == '2':
+                user.modify_user(users)
+            elif option == '3':
+                user.delete_user(users)
+            elif option == '4':
+                auth.logout()
+                break
+            else:
+                print("Opción no valida")
+                
+    def show_menu_user(self, user: User, auth):
+        while True:
+            print(f"\n¡Bienvenido {user.user_name}!")
+            print("=== MENÚ USUARIO ===")
+            print("1. Ver mi información personal")
+            print("2. Cerrar sesión")
+
+            option = input("Seleccione una opción (1-2): ").strip()
+
+            if option == "1":
+                user.view_personal_data()
+            elif option == "2":
                 auth.logout()
                 break
             else:
