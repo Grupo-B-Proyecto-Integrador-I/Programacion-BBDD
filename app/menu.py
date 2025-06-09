@@ -7,12 +7,12 @@ class Menu:
             print(current_user.user_role)
             self.show_menu_admin(current_user, users, auth)
         else:     
-            self.show_standard_menu(current_user, auth)
+            self.show_menu_user(current_user, auth)
             
     def show_menu_admin(self, user: Admin, users, auth):
         while True:
             print(f'¡{user.user_name}! Seleciona una opción para avanzar:')
-            print('1. Ver usuario')
+            print('1. Ver usuarios')
             print('2. Modificar usuario')
             print('3. Eliminar usuario')
             print('4. Cerrar sesión')
